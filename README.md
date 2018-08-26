@@ -1,1 +1,1 @@
-# jlpt
+https://xmuni.github.io/jlpt
