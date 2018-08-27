@@ -62,7 +62,7 @@ function show_tooltip()
 
 	if(descriptions.hasOwnProperty(kanji))
 	{
-		var tooltip_text = descriptions[kanji];
+		var tooltip_text = get_tooltip(kanji);
 		tooltip.innerHTML = tooltip_text;
 		tooltip.style.display = "block";
 		tooltip.style.top = position_top+"px";
@@ -73,4 +73,12 @@ function show_tooltip()
 function hide_tooltip()
 {
 	tooltip.style.display = "none"; // or "block"
+}
+
+function get_tooltip(kanji)
+{
+	var meaning = descriptions[kanji][0];
+	var reading = descriptions[kanji][1];
+	
+	return meaning+"</br></br>"+reading;
 }

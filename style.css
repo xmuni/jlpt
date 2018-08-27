@@ -8,6 +8,7 @@ body
 #title
 {
 	font-size: 2.7rem;
+	color: #222;
 	/*font-weight: bold;*/
 	text-align: center;
 	margin: 50px auto;
@@ -75,12 +76,13 @@ body
 	position: absolute;
 	display: none;
 
+	font-size: 1rem;
 	color: white;
 	background: #333;
 	opacity: 0.95;
 
 	width: 240px;
-	height: 121px;
+	min-height: 121px;
 	top: 500px;
 	left: 500px;
 	padding: 10px;
