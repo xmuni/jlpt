@@ -6,7 +6,6 @@ var cell_height = 70;
 var tooltip_height = 100;
 
 
-var list_cells = document.querySelectorAll(".cell");
 var tooltip = document.querySelector(".tooltip");
 
 
@@ -35,6 +34,7 @@ for(var i = 0; i < description_array.length; i++)
 
 
 
+var list_cells = document.querySelectorAll(".cell");
 for(var i=0; i<list_cells.length; i++)
 {
 	list_cells[i].addEventListener("click", show_tooltip, false);
@@ -43,6 +43,41 @@ for(var i=0; i<list_cells.length; i++)
 	// list_cells[i].addEventListener("click", hide_tooltip, false);
 }
 tooltip.addEventListener("pointerover", hide_tooltip, false);
+
+
+
+var update_buttons = document.querySelectorAll(".button_update");
+for(var i=0; i<update_buttons.length; i++)
+{
+	update_buttons[i].addEventListener("click", update, false);
+}
+
+function update()
+{
+	var cols = document.querySelector("#input_cols").value;
+	var rows = document.querySelector("#input_rows").value;
+
+	var grid = document.querySelector("#grid");
+	grid.style.gridTemplateColumns = "repeat("+cols+", 70px)";
+	grid.style.gridTemplateRows = "repeat("+rows+", 70px)";
+
+	var kanji = document.querySelector("#input_kanji").value;
+	console.log(kanji);
+	var all_cells = document.querySelectorAll(".cell");
+	for(var i=0; i<all_cells.length; i++)
+	{
+		if(i < kanji)
+		{
+			all_cells[i].style.display = "block";
+		}
+		else if(all_cells[i].innerHTML != "")
+		{
+			all_cells[i].style.display = "none";
+		}
+	}
+
+}
+
 
 
 
