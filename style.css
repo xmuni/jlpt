@@ -18,15 +18,16 @@ body
 .grid
 {
 	margin: auto;
-	width: 1330px;
-	height: 910px;
-	background-color: #aaa;
+	width: 1366px;
+	height: 934px;
+	background-color: #ccc;
 
 	display: grid;
 	grid-auto-flow: column;
 	grid-template-columns: repeat(19, 70px);
 	grid-template-rows: repeat(13, 70px);
-	grid-gap: 0px;
+	grid-gap: 2px;
+	padding: 2px;
 
 	justify-items: center;
 	align-items: center;
@@ -51,8 +52,8 @@ body
 
 	font-size: 2rem;
 	background-color: #eee;
-	border-top: 2px #ccc solid;
-	border-left: 2px #ccc solid;
+	/*border-top: 2px #ccc solid;*/
+	/*border-left: 2px #ccc solid;*/
 	box-sizing: border-box;
 
 	width: 70px;
@@ -82,7 +83,7 @@ body
 	opacity: 0.95;
 
 	width: 240px;
-	min-height: 121px;
+	min-height: 125px;
 	top: 500px;
 	left: 500px;
 	padding: 10px;

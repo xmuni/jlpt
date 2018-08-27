@@ -1,7 +1,7 @@
 
 
 
-var cell_width = 70 + 0;
+var cell_width = 70 + 1;
 var cell_height = 70;
 var tooltip_height = 100;
 
@@ -51,7 +51,7 @@ tooltip.addEventListener("pointerover", hide_tooltip, false);
 function show_tooltip()
 {
 	// var cell_offset = (tooltip_height - cell_height) / 2;
-	var position_top  = this.offsetTop - 0;
+	var position_top  = this.offsetTop - 1;
 	var position_left = this.offsetLeft + cell_width;
 
 	var kanji = this.innerHTML;
