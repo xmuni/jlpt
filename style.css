@@ -14,22 +14,33 @@ body
 }
 
 
-#grid
+.grid
 {
 	margin: auto;
-	width: 900px;
-	height: 900px;
-	background-color: #eee;
+	width: 1330px;
+	height: 910px;
+	background-color: #aaa;
 
 	display: grid;
 	grid-auto-flow: column;
-	grid-template-columns: repeat(9, 1fr);
-	grid-template-rows: repeat(9, 1fr);
+	grid-template-columns: repeat(19, 70px);
+	grid-template-rows: repeat(13, 70px);
+	grid-gap: 0px;
 
 	justify-items: center;
 	align-items: center;
 }
 
+
+.n5
+{
+	color: #305b1f;
+}
+
+.n4
+{
+	color: #2f5da8;
+}
 
 .cell
 {
@@ -37,9 +48,10 @@ body
 	justify-content: center;
 	align-items: center;
 
-	font-size: 3rem;
-	background-color: #ddd;
-	border: 2px #bbb solid;
+	font-size: 2rem;
+	background-color: #eee;
+	border-top: 2px #ccc solid;
+	border-left: 2px #ccc solid;
 	box-sizing: border-box;
 
 	width: 70px;
@@ -48,13 +60,13 @@ body
 
 .cell:hover
 {
-	background-color: #eee;
+	background-color: rgb(250,250,250);
 	cursor: default;
 }
 
 .cell:active
 {
-	background-color: #ccc;
+	background-color: #ddd;
 	cursor: default; /* or pointer */
 }
 
@@ -67,8 +79,8 @@ body
 	background: #333;
 	opacity: 0.95;
 
-	width: 250px;
-	height: 100px;
+	width: 240px;
+	height: 121px;
 	top: 500px;
 	left: 500px;
 	padding: 10px;

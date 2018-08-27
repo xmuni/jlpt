@@ -1,7 +1,7 @@
 
 
 
-var cell_width = 80 + 5;
+var cell_width = 70 + 0;
 var cell_height = 70;
 var tooltip_height = 100;
 
@@ -10,12 +10,14 @@ var list_cells = document.querySelectorAll(".cell");
 var tooltip = document.querySelector(".tooltip");
 
 
-var description_array = []; // array of kanji tooltips to be fetched from the json file
+var descriptions = {};
 
-fetch('file.json')
+fetch('meanings.json')
 	.then(response => response.json())
+	.then(function(data) { descriptions = data } );
+	// .then(response => response.json())
 	// .then(jsonResponse => console.log(jsonResponse))
-	.then(jsonResponse => description_array = jsonResponse.descriptions)
+	// .then(jsonResponse => descriptions = jsonResponse)
    // outputs a javascript object from the parsed json
 
 // console.log(description_array);
@@ -51,31 +53,24 @@ function show_tooltip()
 	// var cell_offset = (tooltip_height - cell_height) / 2;
 	var position_top  = this.offsetTop - 0;
 	var position_left = this.offsetLeft + cell_width;
-	// var position_top  = this.getBoundingClientRect().top;
-	// var position_left = this.getBoundingClientRect().left + cell_width;
 
-	tooltip.style.display = "block";
-	tooltip.style.top = position_top+"px";
-	tooltip.style.left = position_left+"px";
+	var kanji = this.innerHTML;
+	// console.log(this.innerHTML);
+	// console.log(descriptions);
+	// console.log(descriptions.hasOwnProperty(this.innerHTML));
+	// console.log(JSON.stringify(descriptions[this.innerHTML]));
 
-	var tooltip_text = get_tooltip(this.innerHTML);
-	tooltip.innerHTML = tooltip_text;
-	// console.log(tooltip_text);
-
-	// alert(position_top+" "+position_left);
+	if(descriptions.hasOwnProperty(kanji))
+	{
+		var tooltip_text = descriptions[kanji];
+		tooltip.innerHTML = tooltip_text;
+		tooltip.style.display = "block";
+		tooltip.style.top = position_top+"px";
+		tooltip.style.left = position_left+"px";
+	}
 }
 
 function hide_tooltip()
 {
 	tooltip.style.display = "none"; // or "block"
-}
-
-function get_tooltip(text)
-{
-	for(var i=0; i<description_array.length; i++)
-	{
-		if(description_array[i][0] == text)
-			return description_array[i][1];
-	}
-	return "No description found";
 }
