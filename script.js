@@ -1,56 +1,53 @@
 
 
 
-var cell_width = 70 + 1;
-var cell_height = 70;
-var tooltip_height = 100;
 
+var cell_width = 50 + 1;
+var cell_height = 50;
+var tooltip_height = 100;
 
 var tooltip = document.querySelector(".tooltip");
 
-
 var descriptions = {};
 
-fetch('meanings.json')
-	.then(response => response.json())
-	.then(function(data) { descriptions = data } );
-	// .then(response => response.json())
-	// .then(jsonResponse => console.log(jsonResponse))
-	// .then(jsonResponse => descriptions = jsonResponse)
-   // outputs a javascript object from the parsed json
-
-// console.log(description_array);
 
 
 
-/*
-var dictionary = {};
-
-for(var i = 0; i < description_array.length; i++)
-{
-    dictionary[description_array[0][0]] = description_array[0][1];
-}
-*/
+/******** MAIN *******/
 
 
-
-var list_cells = document.querySelectorAll(".cell");
-for(var i=0; i<list_cells.length; i++)
-{
-	list_cells[i].addEventListener("click", show_tooltip, false);
-	list_cells[i].addEventListener("pointerover", show_tooltip, false);
-	list_cells[i].addEventListener("pointerout", hide_tooltip, false);
-	// list_cells[i].addEventListener("click", hide_tooltip, false);
-}
-tooltip.addEventListener("pointerover", hide_tooltip, false);
+	fetch('meanings.json')
+		.then(response => response.json())
+		.then(function(data) { descriptions = data } );
 
 
+	var list_cells = document.querySelectorAll(".cell");
+	for(var i=0; i<list_cells.length; i++)
+	{
+		list_cells[i].addEventListener("click", show_tooltip, false);
+		list_cells[i].addEventListener("pointerover", show_tooltip, false);
+		list_cells[i].addEventListener("pointerout", hide_tooltip, false);
+		// list_cells[i].addEventListener("click", hide_tooltip, false);
+	}
+	tooltip.addEventListener("pointerover", hide_tooltip, false);
+	tooltip.addEventListener("click", hide_tooltip, false);
 
-var update_buttons = document.querySelectorAll(".button_update");
-for(var i=0; i<update_buttons.length; i++)
-{
-	update_buttons[i].addEventListener("click", update, false);
-}
+
+	var update_buttons = document.querySelectorAll(".button_update");
+	for(var i=0; i<update_buttons.length; i++)
+	{
+		update_buttons[i].addEventListener("click", update, false);
+	}
+
+
+
+
+/****** END MAIN *****/
+
+
+
+
+
 
 function update()
 {

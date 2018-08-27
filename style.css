@@ -7,25 +7,35 @@ body
 
 #title
 {
-	font-size: 2.7rem;
-	color: #222;
 	/*font-weight: bold;*/
 	text-align: center;
 	margin: 50px auto;
+}
+#title h1
+{
+	font-size: 3rem;
+	color: #222;
+	margin: 10px;
+}
+#title h2
+{
+	font-size: 1.3rem;
+	color: #666;
+	margin: 10px;
 }
 
 
 #grid
 {
 	margin: 30px auto;
-	width: 1366px;
-	height: 934px;
+	width: 1610px;
+	height: 1038px;
 	background-color: #ccc;
 
 	display: grid;
 	grid-auto-flow: column;
-	grid-template-columns: repeat(19, 70px);
-	grid-template-rows: repeat(13, 70px);
+	grid-template-columns: repeat(32, 50px);
+	grid-template-rows: repeat(20, 50px);
 	grid-gap: 2px;
 	padding: 2px;
 
@@ -91,14 +101,14 @@ body
 	justify-content: center;
 	align-items: center;
 
-	font-size: 2rem;
+	font-size: 1.6rem;
 	background-color: #eee;
 	/*border-top: 2px #ccc solid;*/
 	/*border-left: 2px #ccc solid;*/
 	box-sizing: border-box;
 
-	width: 70px;
-	height: 70px;
+	width: 50px;
+	height: 50px;
 }
 
 .cell:hover
@@ -124,7 +134,7 @@ body
 	opacity: 0.95;
 
 	width: 240px;
-	min-height: 125px;
+	min-height: 100px;
 	top: 500px;
 	left: 500px;
 	padding: 10px;
