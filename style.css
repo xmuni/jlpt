@@ -139,6 +139,30 @@ body
 }
 */
 
+#vocabulary
+{
+	font-size: 1.2rem;
+	width: 1710px;
+	margin: 50px auto;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	justify-items: center;
+}
+
+.wordbox
+{
+	width: 400px;
+	padding: 5px 15px;
+	display: grid;
+	grid-template-columns: 1fr 1fr 2fr;
+	border: 1px solid #ddd;
+}
+
+.wordbox:nth-child(odd)
+{
+	background: rgb(235,235,235);
+}
+
 #tooltip
 {
 	position: absolute;
