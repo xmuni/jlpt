@@ -53,8 +53,9 @@ body
 
 .centered
 {
-	width: 320px;
+	width: 200px;
 	margin: auto;
+	margin-bottom: 50px;
 }
 
 #settings
@@ -137,10 +138,12 @@ body
 	cursor: default; // or pointer
 }
 */
-.tooltip
+
+#tooltip
 {
 	position: absolute;
 	display: none;
+	z-index: 10;
 
 	font-size: 1.2rem;
 	color: white;

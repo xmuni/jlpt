@@ -2,11 +2,10 @@
 
 
 
-var cell_width = 50 + 1;
-var cell_height = 50;
-var tooltip_height = 100;
+var tooltip_offset_x = 50 + 1;
+var tooltip_offset_y = 0;
 
-var tooltip = document.querySelector(".tooltip");
+var tooltip = document.querySelector("#tooltip");
 
 var descriptions = {};
 
@@ -42,11 +41,46 @@ var descriptions = {};
 
 
 
+
 /****** END MAIN *****/
 
 
 
 
+
+function set_tooltip_offsets()
+{
+	var tooltip_menu = document.querySelector("#tooltip_menu");
+	var position = tooltip_menu.value;
+	// tooltip_menu.addEventListener("change", function() {alert(tooltip_menu.options[tooltip_menu.selectedIndex].text);} );
+	// tooltip_menu.addEventListener("change", function() {set_tooltip_position(tooltip_menu.value);} );
+
+	if(position == "right")
+	{
+		tooltip_offset_x = 50 + 1;
+		tooltip_offset_y = 0;
+	}
+	else if(position == "left")
+	{
+		tooltip_offset_x = -1 -tooltip.clientWidth;
+		tooltip_offset_y = 0;
+	}
+	else if(position == "top")
+	{
+		tooltip_offset_x = 0;
+		tooltip_offset_y = -1 -tooltip.clientHeight;
+	}
+	else if(position == "bottom")
+	{
+		tooltip_offset_x = 0;
+		tooltip_offset_y = 50 + 1;
+	}
+
+	else
+	{
+		console.log("Error. Tooltip position not recognized: "+position);
+	}
+}
 
 
 function update()
@@ -82,24 +116,24 @@ function update()
 
 function show_tooltip()
 {
-	// var cell_offset = (tooltip_height - cell_height) / 2;
-	var position_top  = this.offsetTop - 1;
-	var position_left = this.offsetLeft + cell_width;
-
 	var kanji = this.innerHTML;
-	// console.log(this.innerHTML);
-	// console.log(descriptions);
-	// console.log(descriptions.hasOwnProperty(this.innerHTML));
-	// console.log(JSON.stringify(descriptions[this.innerHTML]));
 
+	// display="block" must come first to get the tooltip's height and width
 	if(descriptions.hasOwnProperty(kanji))
 	{
 		var tooltip_text = get_tooltip(kanji);
 		tooltip.innerHTML = tooltip_text;
 		tooltip.style.display = "block";
+
+		set_tooltip_offsets();
+
+		var position_top  = this.offsetTop + tooltip_offset_y;
+		var position_left = this.offsetLeft + tooltip_offset_x;
+
 		tooltip.style.top = position_top+"px";
 		tooltip.style.left = position_left+"px";
 	}
+
 }
 
 function hide_tooltip()
