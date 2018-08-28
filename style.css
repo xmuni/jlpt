@@ -130,13 +130,13 @@ body
 	background-color: rgb(250,250,250);
 	cursor: default;
 }
-
+/*
 .cell:active
 {
 	background-color: #ddd;
-	cursor: default; /* or pointer */
+	cursor: default; // or pointer
 }
-
+*/
 .tooltip
 {
 	position: absolute;
