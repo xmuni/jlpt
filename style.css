@@ -146,6 +146,7 @@ body
 	margin: 50px auto;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
+	justify-content: space-between;
 	justify-items: center;
 }
 
@@ -154,8 +155,10 @@ body
 	width: 400px;
 	padding: 5px 15px;
 	display: grid;
-	grid-template-columns: 1fr 1fr 2fr;
+	grid-template-columns: repeat(3, 1fr);
 	border: 1px solid #ddd;
+	border-left: 2px solid #ddd;
+	border-right: 2px solid #ddd;
 }
 
 .wordbox:nth-child(odd)
