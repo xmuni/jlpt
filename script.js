@@ -15,6 +15,8 @@ var descriptions = {};
 /******** MAIN *******/
 
 
+
+
 	fetch('meanings.json')
 		.then(response => response.json())
 		.then(function(data) { descriptions = data } );
@@ -26,7 +28,6 @@ var descriptions = {};
 		list_cells[i].addEventListener("click", show_tooltip, false);
 		list_cells[i].addEventListener("pointerover", show_tooltip, false);
 		list_cells[i].addEventListener("pointerout", hide_tooltip, false);
-		// list_cells[i].addEventListener("click", hide_tooltip, false);
 	}
 	tooltip.addEventListener("pointerover", hide_tooltip, false);
 	tooltip.addEventListener("click", hide_tooltip, false);
@@ -77,8 +78,6 @@ function set_tooltip_offsets()
 {
 	var tooltip_menu = document.querySelector("#tooltip_menu");
 	var position = tooltip_menu.value;
-	// tooltip_menu.addEventListener("change", function() {alert(tooltip_menu.options[tooltip_menu.selectedIndex].text);} );
-	// tooltip_menu.addEventListener("change", function() {set_tooltip_position(tooltip_menu.value);} );
 
 	if(position == "right")
 	{
