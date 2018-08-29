@@ -38,6 +38,16 @@ var descriptions = {};
 		update_buttons[i].addEventListener("click", update, false);
 	}
 
+	var cell_random_n5 = document.querySelector("#random_n5");
+	var cell_random_n4 = document.querySelector("#random_n4");
+	var cell_random_n3 = document.querySelector("#random_n3");
+	var button_random_n5 = document.querySelector("#randomize_n5");
+	var button_random_n4 = document.querySelector("#randomize_n4");
+	var button_random_n3 = document.querySelector("#randomize_n3");
+	button_random_n5.addEventListener("click", function() { cell_random_n5.innerHTML = get_random_kanji("n5") }, false);
+	button_random_n4.addEventListener("click", function() { cell_random_n4.innerHTML = get_random_kanji("n4") }, false);
+	button_random_n3.addEventListener("click", function() { cell_random_n3.innerHTML = get_random_kanji("n3") }, false);
+
 
 
 
@@ -45,6 +55,21 @@ var descriptions = {};
 /****** END MAIN *****/
 
 
+
+
+function get_random_kanji(cell_class)
+{
+	var cells = document.querySelectorAll("."+cell_class);
+
+	var kanji = "";
+	while(kanji == "")
+	{
+		random_index = Math.floor(Math.random() * (cells.length + 1));
+		kanji = cells[random_index].innerHTML;
+	}
+
+	return kanji;
+}
 
 
 

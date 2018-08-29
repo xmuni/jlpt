@@ -1,7 +1,6 @@
 body
 {
 	font-family: arial;
-	min-height: 1500px;
 }
 
 
@@ -11,6 +10,7 @@ body
 	text-align: center;
 	margin: 50px auto;
 }
+
 #title h1
 {
 	font-size: 3rem;
@@ -115,12 +115,13 @@ body
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	margin: auto;
 
 	font-size: 1.6rem;
 	background-color: #eee;
 	/*border-top: 2px #ccc solid;
 	/*border-left: 2px #ccc solid;*/
-	box-sizing: border-box;
+	/*box-sizing: border-box;*/
 
 	width: 50px;
 	height: 50px;
@@ -139,12 +140,37 @@ body
 }
 */
 
+#randoms
+{
+	display: grid;
+	grid-template-columns: 200px 400px 1000px;
+	width: 1600px;
+	height: 100px;
+	margin: 80px auto;
+}
+
+#randoms button
+{
+	margin: auto;
+}
+
+.random_bg
+{
+	margin: auto;
+	width: 50px;
+	height: 50px;
+	padding: 2px;
+	background-color: #ccc;
+	cursor: default;
+}
+
 #vocabulary
 {
 	font-size: 1.2rem;
 	width: 1710px;
 	margin: 50px auto;
 	display: grid;
+	grid-template-rows: repeat(2, 1fr);
 	grid-template-columns: repeat(3, 1fr);
 	justify-content: space-between;
 	justify-items: center;
@@ -155,7 +181,7 @@ body
 	width: 400px;
 	padding: 5px 15px;
 	display: grid;
-	grid-template-columns: 110px 90px 200px;
+	grid-template-columns: 110px 90px 200px; /* 1fr 1fr 2fr doesn't work on iOS Safari */
 	border: 1px solid #ddd;
 	border-left: 2px solid #ddd;
 	border-right: 2px solid #ddd;
