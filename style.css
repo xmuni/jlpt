@@ -167,7 +167,7 @@ body
 #vocabulary
 {
 	font-size: 1.2rem;
-	width: 1710px;
+	width: 1610px;
 	height: 8950px;
 	margin: 50px auto;
 	display: flex;
@@ -180,6 +180,7 @@ body
 	/*grid-auto-flow: column;*/
 
 	justify-content: flex-start;
+	align-content: space-between;
 	/*justify-content: space-between;*/
 	justify-items: center;
 }
