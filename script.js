@@ -51,6 +51,11 @@ var descriptions = {};
 
 
 
+	// var button_random_kanji = document.querySelector("#button_random_kanji");
+	// button_random_kanji.addEventListener("click", get_random_kanji_from_checkbox, false);
+
+
+
 
 
 /****** END MAIN *****/
@@ -72,6 +77,21 @@ function get_random_kanji(cell_class)
 	return kanji;
 }
 
+/*
+function get_random_kanji_from_checkbox()
+{
+	var checkbox_n5 = document.querySelector("#checkbox_n5");
+	var checkbox_n4 = document.querySelector("#checkbox_n4");
+	var checkbox_n3 = document.querySelector("#checkbox_n3");
+
+	var cells;
+
+	if(checkbox_n5.checked)
+		cells = document.querySelectorAll(".n5");
+
+
+}
+*/
 
 
 function set_tooltip_offsets()

@@ -140,6 +140,27 @@ body
 }
 */
 
+
+/*
+#randomizer
+{
+	display: grid;
+	grid-template-columns: 60px 130px;
+	justify-items: center;
+	// align-items: center;
+
+	width: 180px;
+	height: 150px;
+	margin: 80px auto;
+}
+*/
+/*
+#randomizer button
+{
+	margin: 10px;
+}
+*/
+
 #randoms
 {
 	display: grid;
