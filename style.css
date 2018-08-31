@@ -208,6 +208,8 @@ body
 
 .wordbox
 {
+	margin-left: 10px;
+	margin-right: 10px;
 	width: 400px;
 	padding: 5px 15px;
 	display: grid;
