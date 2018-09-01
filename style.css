@@ -189,7 +189,7 @@ body
 {
 	font-size: 1.2rem;
 	width: 1800px;
-	height: 6780px;
+	height: 6900px;
 	margin: 50px auto;
 	display: flex;
 	flex-direction: column;
@@ -210,10 +210,11 @@ body
 {
 	margin-left: 10px;
 	margin-right: 10px;
-	width: 400px;
-	padding: 5px 15px;
+	width: 445px;
+	padding: 5px;
 	display: grid;
-	grid-template-columns: 110px 90px 200px; /* 1fr 1fr 2fr doesn't work on iOS Safari */
+	grid-gap: 15px;
+	grid-template-columns: 40px 100px 80px 170px; /* 1fr 1fr 2fr doesn't work on iOS Safari */
 	border: 1px solid #ddd;
 	border-left: 2px solid #ddd;
 	border-right: 2px solid #ddd;
@@ -222,6 +223,12 @@ body
 .wordbox:nth-child(odd)
 {
 	background: rgb(235,235,235);
+}
+
+.wordbox .boxnumber
+{
+	color: #ccc;
+	text-align: right;
 }
 
 #tooltip
