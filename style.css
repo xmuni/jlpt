@@ -1,6 +1,25 @@
 body
 {
 	font-family: arial;
+	font-family: 1rem;
+	margin: 0;
+	padding: 0;
+}
+
+
+nav {
+    width: 100%;
+    background: #444;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav a {
+	padding: 0.5rem 1rem;
+	color: white;
+	text-decoration: none;
 }
 
 
